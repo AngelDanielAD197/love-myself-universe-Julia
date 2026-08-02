@@ -7,7 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&family=Fira+Code&display=swap" rel="stylesheet">
     
     <style>
-        /* Base del Universo */
+        /* ==========================================================================
+           1. ESTILOS BASE Y DESKTOP
+           ========================================================================== */
         body {
             background-color: #0b0914;
             color: #d1cbdc;
@@ -57,6 +59,7 @@
             overflow-y: auto;
             font-size: 0.9rem;
             font-family: sans-serif;
+            max-height: 300px;
         }
         .chat-input-area {
             padding: 15px;
@@ -89,7 +92,7 @@
         }
         .header-lectura h1 {
             font-size: 2.3rem;
-            color: #a393eb; /* Tono lila/púrpura místico para el Outro de la Era */
+            color: #48cae4;
             margin: 5px 0;
         }
         .quote-bts {
@@ -129,10 +132,10 @@
             border: none;
         }
 
-        /* Botón de Navegación Único en el Footer */
+        /* Botones de Navegación del Footer */
         .btn-navegacion {
             display: flex;
-            justify-content: center; 
+            justify-content: space-between;
             align-items: center;
             margin-top: 60px;
             padding-top: 30px;
@@ -142,11 +145,11 @@
         .btn-explorar {
             color: #48cae4;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-family: 'Fira Code', monospace;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 12px 24px;
+            letter-spacing: 1px;
+            padding: 10px 18px;
             border: 1px solid rgba(72, 202, 228, 0.3);
             border-radius: 8px;
             background: rgba(72, 202, 228, 0.02);
@@ -161,6 +164,73 @@
             box-shadow: 0 0 15px rgba(72, 202, 228, 0.5);
             transform: translateY(-2px);
             cursor: pointer;
+        }
+
+        .btn-centro {
+            color: #6a6575;
+            text-decoration: none;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .btn-centro:hover {
+            color: #a393eb;
+        }
+
+        /* ==========================================================================
+           2. ADAPTACIÓN RESPONSIVA PARA MÓVILES Y TABLETS (< 900px)
+           ========================================================================== */
+        @media screen and (max-width: 900px) {
+            body {
+                overflow-y: auto !important; /* Habilita el scroll vertical general */
+                height: auto;
+            }
+
+            .workspace-tres-paneles {
+                display: flex;
+                flex-direction: column; /* Apila los paneles verticalmente */
+                height: auto;
+                min-height: 100vh;
+            }
+
+            /* Reordenamos con flex order: primero la carta, luego el asistente, luego la música */
+            .panel-central-carta {
+                order: 1;
+                padding: 20px 15px;
+                margin: 0;
+                overflow-y: visible; /* Fluye naturalmente con el scroll general */
+            }
+
+            .carta-contenido-layout {
+                font-size: 1rem; /* Tamaño de letra más cómodo para celulares */
+                line-height: 1.7;
+            }
+
+            .header-lectura h1 {
+                font-size: 1.7rem;
+            }
+
+            /* Panel del Chat */
+            .workspace-tres-paneles > aside:nth-of-type(1) {
+                order: 2;
+                margin: 15px;
+            }
+
+            /* Panel de Música */
+            .workspace-tres-paneles > aside:nth-of-type(2) {
+                order: 3;
+                margin: 15px;
+            }
+
+            .panel-lateral {
+                height: auto;
+            }
+
+            .chat-contenido {
+                max-height: 220px; /* Limita la altura del chat en móvil para que no sea infinito */
+            }
         }
     </style>
 </head>
