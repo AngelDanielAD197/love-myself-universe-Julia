@@ -208,11 +208,11 @@ const nodeCardsData = {
     ],
     1: [
         {
-            tabLabel: "EN DESARROLLO",
-            title: "EN DESARROLLO",
-            image: "img/prox.png",
-            desc: "EN DESARROLLO",
-            url: "carta2.html"
+            tabLabel: "Intro 2",
+            title: "Intro: Nuevas Coordenadas",
+            image: "img/MAC.jpg",
+            desc: "Después de aprender a mirar hacia dentro, llega el momento de mirar hacia afuera. El segundo semestre representa una expansión de la perspectiva: nuevas personas, nuevos lugares, nuevas experiencias y preguntas que comienzan a conectar la vida universitaria con la ciudad, la psicología, las raíces y el mundo que me rodea. Porque quizá conocerme mejor no consiste únicamente en explorar quién soy, sino también en descubrir todo aquello que existe más allá de mí.",
+            url: "cartas/IntroS2.html"
         }
       ],
     2: [
